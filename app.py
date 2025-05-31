@@ -19,7 +19,8 @@ if st.checkbox("🌌 星空背景", value=True):
 
     [data-testid="stAppViewContainer"]::before {
         content: '';
-        position: fixed;
+        position: relative !important;
+        overflow: hidden !important;
         top: 0;
         left: 0;
         width: 200%;
@@ -127,6 +128,15 @@ if st.button("🔮 祈願一次"):
     unsafe_allow_html=True
 )
 
+# 按鈕設置
+button[kind="secondary"] {
+    background-color: #ffa500 !important;
+    color: #ffffe0 !important;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #e6b800;
+}
+
 # 模擬 trash 狀態
 # 隨機檔名產生器
 def random_filename(extension):
@@ -169,6 +179,11 @@ with st.expander("📁 查看 trash 資料夾狀況"):
     
 
 # 模擬地圖互動
+
+label {
+    color: #FFD700 !important;
+}
+
 place = [
         "星落湖邊的壞掉硬碟", 
         "孤雲閣的USB插槽", 
