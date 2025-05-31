@@ -13,7 +13,7 @@ st.markdown("""
     to {transform: translateY(-1000px);}
 }
 
-body::before {
+[data-testid="stAppViewContainer"]::before {
     content: '';
     position: fixed;
     top: 0;
@@ -62,7 +62,7 @@ message_styles = {
 }
 
 # 抽卡
-if st.button("🔮 抽角色"):
+if st.button("🔮 祈願一次"):
     result = random.choices(
         characters,
         weights=[2 if c["rarity"] == 5 
@@ -75,17 +75,41 @@ if st.button("🔮 抽角色"):
         {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"}
     )
 
-    st.markdown(f"""
+    st.markdown(
+    f"""
+    <div style='
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        background-color: #fff7e6;
+        font-family: "Courier New", monospace;
+        border: 2px solid #ffa07a;
+        border-radius: 10px;
+        margin-top: 1em;
+        padding: 1em;
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
+    '>
+        🔮 🌀 🪄 🪬 🕯️<br>
+        <strong>{result["rarity"]}星角色 {result["name"]} 登場 ✨{style["emoji"]}</strong><br>
+        🔮 🌀 🪄 🪬 🕯️<br><br>
+        {style["top"]}<br>
+        {result["message"]}<br>
+        {style["bottom"]}
+    </div>
 
-                🔮 🌀 🪄 🪬 🕯️
-                {result["rarity"]}星角色 >>> {result["name"]} 登場 ✨{style["emoji"]}
-                🔮 🌀 🪄 🪬 🕯️
-                
-                {style["top"]}
-                {result["message"]}
-                {style["bottom"]}
-
-    """)
+    <style>
+        @keyframes fadeIn {{
+            from {{opacity: 0; transform: scale(0.9);}}
+            to {{opacity: 1; transform: scale(1);}}
+    }}
+        </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # 模擬 trash 狀態
 # 隨機檔名產生器
