@@ -13,7 +13,7 @@ button[kind="secondary"] {
 
 # 介面
 if st.checkbox("🌌 星空背景", value=True):
-    st.markdown("""
+    st.markdown(r"""
     <style>
     body, [data-testid="stAppViewContainer"] {
         background: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
@@ -45,7 +45,7 @@ if st.checkbox("🌌 星空背景", value=True):
     </style>
     """, unsafe_allow_html=True)
 else:
-    st.markdown("""
+    st.markdown(r"""
     <style>
     body, [data-testid="stAppViewContainer"] {
         background-color: white !important;
