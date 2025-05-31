@@ -8,7 +8,7 @@ if st.checkbox("🌌 星空背景", value=True):
     st.markdown("""
     <style>
     body, [data-testid="stAppViewContainer"] {
-        background-color: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
+        background: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
         color: #FFD700;
     }
 
