@@ -4,12 +4,12 @@ import random
 st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 
 # 介面
-if st.checkbox("🌌 開啟星空背景", value=True):
+if st.checkbox("🌌 星空背景", value=True):
     st.markdown("""
     <style>
     body, [data-testid="stAppViewContainer"] {
-        background-color: #000814 !important;
-        color: #f0f0f0 !important;
+        background-color: #0f172a !important;
+        color: #f0f0f0;
     }
 
     @keyframes moveStars {
@@ -39,7 +39,7 @@ else:
     <style>
     body, [data-testid="stAppViewContainer"] {
         background-color: white !important;
-        color: black !important;
+        color: black;
     }
 
     [data-testid="stAppViewContainer"]::before {
