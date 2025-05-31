@@ -49,6 +49,19 @@ if st.button("🔮 抽角色"):
 """)
 
 # 模擬 trash 狀態
+def random_filename(extension):
+    prefixes = [
+        "lost_sector", "USB_ghost", "WIP", "cache", "crashlog",
+        "unknown_file", "~temp", "報告final_final", "NMF碎片"
+    ]
+    suffixes = [
+        "001", "v2", "dead", "lasthope", "damaged", 
+        "x928", "draft", "lost", "backup", "NULL"
+    ]
+    prefix = random.choice(prefixes)
+    suffix = random.choice(suffixes)
+    return f"{prefix}_{suffix}.{extension}"
+
 with st.expander("📁 查看 trash 資料夾狀況"):
     st.write("目前有：")
 
