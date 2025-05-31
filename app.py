@@ -49,47 +49,89 @@ if st.button("🔮 抽角色"):
 """)
 
 # 模擬 trash 狀態
+# 隨機檔名產生器
 def random_filename(extension):
-    prefixes = [
-        "lost_sector", "USB_ghost", "WIP", "cache", "crashlog",
-        "unknown_file", "~temp", "報告final_final", "NMF碎片"
-    ]
-    suffixes = [
-        "001", "v2", "dead", "lasthope", "damaged", 
-        "x928", "draft", "lost", "backup", "NULL"
-    ]
-    prefix = random.choice(prefixes)
-    suffix = random.choice(suffixes)
-    return f"{prefixes}_{suffixes}.{extension}"
+    prefixes = ["lost_sector", "USB_ghost", "WIP", "cache", "報告final", "frag"]
+    suffixes = ["001", "v2", "dead", "lasthope", "backup", "x928"]
+    return f"{random.choice(prefixes)}_{random.choice(suffixes)}.{extension}"
 
+# 檔案類型清單 (name, extension, 數字是 count 還是 size)
+trash_types = [
+    ("jpeg", "jpg", "count"),
+    ("fits", "fits", "size"),
+    ("py", "py", "count"),
+    ("doc", "docx", "count")
+]
+
+# 初始化 trash_state
+if "trash_state" not in st.session_state:
+    st.session_state.trash_state = {}
+
+# 刷新按鈕
+if st.button("🌀 刷新 trash 狀態"):
+    new_state = {}
+    for name, ext, numtype in trash_types:
+        num_key = f"{name}_{'count' if numtype == 'count' else 'size'}"
+        file_key = f"{name}_file"
+        new_state[num_key] = random.randint(1, 100)
+        new_state[file_key] = random_filename(ext)
+    st.session_state.trash_state = new_state
+
+# 顯示 trash 狀態
+trash = st.session_state.trash_state
 with st.expander("📁 查看 trash 資料夾狀況"):
-    st.write("手術中：")
-
-    jpeg_count = random.randint(1, 100)
-    fits_size = random.randint(1, 100)
-    py_count = random.randint(1, 100)
-    doc_count = random.randint(1, 100)
-
-    markdown_text = f"""
-- `recup_dir.1/`: {jpeg_count} 個無法辨識的 JPEG，belike `{random_filename('jpg')}`  
-- `recup_dir.2/`: 1 個 {fits_size}GB 的 `.fits` 無法打開，belike `{random_filename('fits')}`  
-- `recup_dir.3/`: {py_count} 個你自己都忘記寫過的 `.py` 腳本，belike `{random_filename('py')}`  
-- `recup_dir.4/`: `~$報告1.docx` 殘骸，共 {doc_count} 段碎片，belike `{random_filename('docx')}`  
-- `recup_dir.5/`: 空的（敲擊有回音）
-"""
-
+    st.markdown(f"""
+- 📂 recup_dir.1/: <span style='color:red'>{trash.get("jpeg_count", 0)}</span> 個無法辨識的 JPEG，例如 `{trash.get("jpeg_file", "")}`  
+- 📂 recup_dir.2/: 1 個 <span style='color:red'>{trash.get("fits_size", 0)}GB</span> 的 `.fits` 無法打開，例如 `{trash.get("fits_file", "")}`  
+- 📂 recup_dir.3/: <span style='color:red'>{trash.get("py_count", 0)}</span> 個你自己都忘記寫過的 `.py` 腳本，例如 `{trash.get("py_file", "")}`  
+- 📂 recup_dir.4/: `~$報告1.docx` 殘骸，共 <span style='color:red'>{trash.get("doc_count", 0)}</span> 段碎片，例如 `{trash.get("doc_file", "")}`  
+- 📂 recup_dir.5/: 空的（暫時）
+""", unsafe_allow_html=True)
+    
     st.markdown(markdown_text)
 
 # 模擬地圖互動
-with st.expander("🗺️ 模擬地圖互動"):
-    location = st.radio("選擇地點探索：", ["星落湖邊的壞掉硬碟", "孤雲閣的USB插槽", "蒙德圖書館裡的備份幻影"])
-    if location == "星落湖邊的壞掉硬碟":
-        st.write("你發現了一個 2008 年的外接式硬碟，裡面是某人高中時期的音樂資料和.txt備忘錄。")
-    elif location == "孤雲閣的USB插槽":
-        st.write("你試圖將 trash 裡的某個 .fits 插入，但插槽發出悲鳴，USB自我彈出。")
-    elif location == "蒙德圖書館裡的備份幻影":
-        st.write("一位圖書館員給了你一張紙條，上面寫著『請善用雲端硬碟。』")
+place = [
+        "星落湖邊的壞掉硬碟", 
+        "孤雲閣的USB插槽", 
+        "蒙德圖書館裡的備份幻影",
+        "稻妻廢紙堆中的log.txt",
+        "草神深淵中的Z碟"
+    ]
+if "map_options" not in st.session_state:
+    st.session_state.map_options = random.sample(plate, 3)
 
-st.markdown("---")
-st.success("再撐一下。你會從 trash 把你未來拉出來的。")
+if st.button("🔄 刷新探索地點"):
+    st.session_state.map_options = random.sample(plate, 3)
+
+selected = st.radio("請選擇探索地點", st.session_state.map_options)
+
+# 對應敘述也隨機：
+discovery = {
+    "星落湖邊的壞掉硬碟": [
+        "你發現了一個 2008 年的外接式硬碟，裡面是某人高中時期的音樂資料。",
+        "硬碟裡的檔案都叫 `final_final_報告v9(1).docx`。"
+    ],
+    "孤雲閣的USB插槽": [
+        "USB插入後發出金屬尖叫，自動彈出。",
+        "你插入了一個裝著 `.fits` 的 USB，結果 Windows 要你格式化它。"
+    ],
+    "蒙德圖書館裡的備份幻影":  [
+        "你發現了一個 2008 年的外接式硬碟，裡面是某人高中時期的音樂資料。",
+        "硬碟裡的檔案都叫 `final_final_報告v9(1).docx`。"
+    ],
+    "稻妻廢紙堆中的log.txt":  [
+        "我不知道",
+        "還沒想好"
+    ],
+    "草神深淵中的Z碟":  [
+        "哭了",
+        "年輕人悔恨的淚水"
+    ]
+}
+
+if selected in discovery:
+    st.write(random.choice(discovery[selected]))
+
+st.success("再撐一下。你會從深淵撈回 trash 的。")
 
