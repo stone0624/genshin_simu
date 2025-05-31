@@ -47,7 +47,8 @@ if st.button("🔮 抽角色"):
         align-items: center;
         height: 180px;
         width: 100%;
-        border: 5px solid #f9f9f9;
+        background-color: "#f6ffed";
+        border: 5px solid "#f9f9f9";
         border-radius: 10px;
         padding: 20px;
         margin: 30px 0;
