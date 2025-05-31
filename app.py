@@ -1,35 +1,54 @@
 import streamlit as st
 import random
 
+# 介面
+if st.checkbox("🌌 開啟星空背景", value=True):
+    st.markdown("""
+    <style>
+    body, [data-testid="stAppViewContainer"] {
+        background-color: #000814 !important;
+        color: #f0f0f0 !important;
+    }
+
+    @keyframes moveStars {
+        from {transform: translateY(0);}
+        to {transform: translateY(-1000px);}
+    }
+
+    [data-testid="stAppViewContainer"]::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+        background-size: 100px 100px;
+        background-position: 0 0, 50px 50px;
+        animation: moveStars 60s linear infinite;
+        z-index: -1;
+        opacity: 0.2;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <style>
+    body, [data-testid="stAppViewContainer"] {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    [data-testid="stAppViewContainer"]::before {
+        display: none !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 st.title("🌌 原神模擬器.陽春ver")
 st.markdown("PhotoRec 招魂法事絕讚進行中，提瓦特立入禁止。")
-
-# 介面
-st.markdown("""
-<style>
-@keyframes moveStars {
-    from {transform: translateY(0);}
-    to {transform: translateY(-1000px);}
-}
-
-[data-testid="stAppViewContainer"]::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(white 1px, transparent 1px),
-                radial-gradient(white 1px, transparent 1px);
-    background-size: 100px 100px;
-    background-position: 0 0, 50px 50px;
-    animation: moveStars 60s linear infinite;
-    z-index: -1;
-    opacity: 0.2;
-}
-</style>
-""", unsafe_allow_html=True)
 
 # 角色池設定
 characters = [
