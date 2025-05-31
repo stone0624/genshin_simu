@@ -20,35 +20,31 @@ button[kind="secondary"] {
 if st.checkbox("🌌 星空背景", value=True):
     st.markdown(r"""
     <style>
-    /* 這是主要容器，給它相對定位和邊界限制 */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
+        background: linear-gradient(180deg, #0d1b2a, #191970) !important;
         color: #FFD700;
-        position: relative !important;
-        overflow: hidden !important;
+        position: relative;
+        overflow: hidden;
     }
 
-    /* 星星層貼在後面當背景動畫 */
+    @keyframes moveStars {
+        from { transform: translateY(0); }
+        to { transform: translateY(-500px); }
+    }
+
     [data-testid="stAppViewContainer"]::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(white 1px, transparent 1px),
-                    radial-gradient(white 1px, transparent 1px);
-        background-size: 80px 80px;
-        background-position: 0 0, 50px 50px;
-        animation: moveStars 60s linear infinite;
-        pointer-events: none;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(white 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: moveStars 30s linear infinite;
+        opacity: 0.3;
         z-index: -1;
-        opacity: 0.4;
-    }
-
-    @keyframes moveStars {
-        from {transform: translateY(0);}
-        to {transform: translateY(-1000px);}
+        pointer-events: none;
     }
     </style>
     """, unsafe_allow_html=True)
