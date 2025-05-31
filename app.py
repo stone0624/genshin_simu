@@ -146,7 +146,7 @@ if selected in discovery:
             padding: 1em;
             margin-top: 1em;
             margin-bottom: 50px;
-            background-color: color;
+            background-color: {color};
             font-family: "Courier New", monospace;
         '>
         <strong>📍你在「{selected}」中發現{message}</strong><br><br>
