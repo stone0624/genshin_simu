@@ -138,16 +138,16 @@ if selected in discovery:
         f"""
         <div style='
             display: flex;
-            justify-content: center;   /* 水平置中 */
-            align-items: center;       /* 垂直置中 */
-            height: 200px;
-            border: 2px solid {color};
-            border-radius: 6px;
-            padding: 1em;
-            margin-top: 1em;
-            margin-bottom: 50px;
-            background-color: {color};
-            font-family: "Courier New", monospace;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        width: 100%;
+        border: 2px dashed {color};
+        border-radius: 10px;
+        background-color: {color};
+        padding: 20px;
+        margin: 30px 0;
+        text-align: center;
         '>
         <strong>📍你在「{selected}」中發現{message}</strong><br><br>
         </div>
