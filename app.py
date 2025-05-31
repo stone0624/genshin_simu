@@ -130,7 +130,7 @@ discovery = {
 }
 
 colors = ["#f9f9f9", "#fff7e6", "#e6f7ff", "#f0f0f0"]
-color = random.choice(colors)
+color1, color2 = random.choice(colors, 2)
 
 if selected in discovery:
     message = random.choice(discovery[selected])
@@ -142,9 +142,9 @@ if selected in discovery:
         align-items: center;
         height: 180px;
         width: 100%;
-        border: 2px dashed {color};
+        border: 2px dashed {color1};
         border-radius: 10px;
-        background-color: {color};
+        background-color: {color2};
         padding: 20px;
         margin: 30px 0;
         text-align: center;
