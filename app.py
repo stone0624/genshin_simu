@@ -43,7 +43,7 @@ if st.button("🔮 抽角色"):
         ```
         << {result["rarity"]}星角色 >>
             
-        ☆ {result["name"]} ☆ 登場！{style["emoji"]} 
+         {result["name"]} 登場！{style["emoji"]} 
             
         {style["top"]}
         {result["message"]}
