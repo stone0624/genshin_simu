@@ -3,6 +3,15 @@ import random
 
 st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 
+# 按鈕設置
+button[kind="secondary"] {
+    background-color: #ffa500 !important;
+    color: #ffffe0 !important;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #e6b800;
+}
+
 # 介面
 if st.checkbox("🌌 星空背景", value=True):
     st.markdown("""
@@ -127,15 +136,6 @@ if st.button("🔮 祈願一次"):
     """,
     unsafe_allow_html=True
 )
-
-# 按鈕設置
-button[kind="secondary"] {
-    background-color: #ffa500 !important;
-    color: #ffffe0 !important;
-    border-radius: 8px;
-    font-weight: bold;
-    border: 1px solid #e6b800;
-}
 
 # 模擬 trash 狀態
 # 隨機檔名產生器
