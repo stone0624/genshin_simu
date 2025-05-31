@@ -83,7 +83,7 @@ with st.expander("📁 查看 trash 資料夾狀況"):
     st.markdown(f"""
 - 📂 recup_dir.1/: <span style='color:red'>{trash.get("jpeg_count", 0)}</span> 個無法辨識的 JPEG，例如 `{trash.get("jpeg_file", "")}`  
 - 📂 recup_dir.2/: 1 個 <span style='color:red'>{trash.get("fits_size", 0)}GB</span> 的 `.fits` 無法打開，例如 `{trash.get("fits_file", "")}`  
-- 📂 recup_dir.3/: <span style='color:red'>{trash.get("py_count", 0)}</span> 個你自己都忘記寫過的 `.py` 腳本，例如 `{trash.get("py_file", "")}`  
+- 📂 recup_dir.3/: <span style='color:red'>{trash.get("py_count", 0)}</span> 個你自己都忘記寫過的 `.py` 檔案，例如 `{trash.get("py_file", "")}`  
 - 📂 recup_dir.4/: `~$報告1.docx` 殘骸，共 <span style='color:red'>{trash.get("doc_count", 0)}</span> 段碎片，例如 `{trash.get("doc_file", "")}`  
 - 📂 recup_dir.5/: 空的（暫時）
 """, unsafe_allow_html=True)
@@ -130,7 +130,10 @@ discovery = {
 }
 
 if selected in discovery:
-    st.write(random.choice(discovery[selected]))
+    # st.write(random.choice(discovery[selected]))
+    {style["╭──────╮"]}
+    {result[random.choice(discovery[selected])]}
+    {style["╰──────╯"]}
 
 st.success("再撐一下。你會從深淵撈回 trash 的。")
 
