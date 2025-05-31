@@ -38,7 +38,7 @@ message_styles = {
 # 抽卡互動
 if st.button("🔮 抽角色"):
     result = random.choices(characters, weights=[2 if c["rarity"] == 5 else 5 if c["rarity"] == 4 else 8 for c in characters])[0]
-    style = message_styles.get(result["name"], {"emoji": "☆彡", "top": "********", "bottom": "********"})
+    style = message_styles.get(result["name"], {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"})
     st.markdown(
     f"""
 ```
