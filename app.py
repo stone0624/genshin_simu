@@ -26,7 +26,7 @@ if st.checkbox("🌌 星空背景", value=True):
         height: 200%;
         background: radial-gradient(white 1px, transparent 1px),
                     radial-gradient(white 1px, transparent 1px);
-        background-size: 80px 80px;;
+        background-size: 80px 80px;
         background-position: 0 0, 50px 50px;
         animation: moveStars 60s linear infinite;
         pointer-events: none;
