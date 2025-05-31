@@ -4,12 +4,17 @@ import random
 st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 
 # 按鈕設置
-button[kind="secondary"]: {r"""
-    background-color: #ffa500 !important;
-    color: #ffffe0 !important;
-    font-weight: bold;
-    border: 1px solid #e6b800;
-"""}
+st.markdown(r"""
+<style>
+button[kind="secondary"] {
+  background-color: #FFD700 !important;
+  color: black !important;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid #e6b800;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # 介面
 if st.checkbox("🌌 星空背景", value=True):
