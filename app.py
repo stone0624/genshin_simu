@@ -60,7 +60,7 @@ def random_filename(extension):
     ]
     prefix = random.choice(prefixes)
     suffix = random.choice(suffixes)
-    return f"{prefix}_{suffix}.{extension}"
+    return f"{prefixes}_{suffixes}.{extension}"
 
 with st.expander("📁 查看 trash 資料夾狀況"):
     st.write("目前有：")
