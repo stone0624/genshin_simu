@@ -98,10 +98,10 @@ place = [
         "草神深淵中的Z碟"
     ]
 if "map_options" not in st.session_state:
-    st.session_state.map_options = random.sample(plate, 3)
+    st.session_state.map_options = random.sample(place, 3)
 
 if st.button("🔄 刷新探索地點"):
-    st.session_state.map_options = random.sample(plate, 3)
+    st.session_state.map_options = random.sample(place, 3)
 
 selected = st.radio("請選擇探索地點", st.session_state.map_options)
 
