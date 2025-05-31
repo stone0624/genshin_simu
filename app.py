@@ -1,6 +1,8 @@
 import streamlit as st
 import random
 
+st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
+
 # 介面
 if st.checkbox("🌌 開啟星空背景", value=True):
     st.markdown("""
@@ -46,7 +48,6 @@ else:
     </style>
     """, unsafe_allow_html=True)
 
-st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 st.title("🌌 原神模擬器.陽春ver")
 st.markdown("PhotoRec 招魂法事絕讚進行中，提瓦特立入禁止。")
 
