@@ -129,8 +129,8 @@ discovery = {
     ]
 }
 
-colors = ["#f9f9f9", "#fff7e6", "#e6f7ff", "#f0f0f0"]
-color1, color2 = random.choice(colors, 2)
+colors = ["#f9f9f9", "#fff7e6", "#e6f7ff", "#f0f0f0", "#fff1f0","#f6ffed", "#fffbe6", "#e8f5e9", "#fff0f6", "#eaeaea"]
+color1, color2 = random.sample(colors, 2)
 
 if selected in discovery:
     message = random.choice(discovery[selected])
