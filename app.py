@@ -40,20 +40,6 @@ if st.button("🔮 抽角色"):
     result = random.choices(characters, weights=[2 if c["rarity"] == 5 else 5 if c["rarity"] == 4 else 8 for c in characters])[0]
     style = message_styles.get(result["name"], {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"})
     st.markdown(
-    f"""
-    <div style='
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 180px;
-        width: 100%;
-        background-color: "#f6ffed";
-        border: 5px solid "#f9f9f9";
-        border-radius: 10px;
-        padding: 20px;
-        margin: 30px 0;
-        text-align: center;
-    '>
         ```
         ★ {result["rarity"]}星角色 ★
             
@@ -63,7 +49,7 @@ if st.button("🔮 抽角色"):
         {result["message"]}
         {style["bottom"]}
         ```
-    """)
+        )
 
 # 模擬 trash 狀態
 # 隨機檔名產生器
