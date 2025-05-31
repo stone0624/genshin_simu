@@ -4,7 +4,7 @@ import random
 st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 
 # 按鈕設置
-button[kind=="secondary"] {r"""
+button[kind="secondary"]: {r"""
     background-color: #ffa500 !important;
     color: #ffffe0 !important;
     font-weight: bold;
