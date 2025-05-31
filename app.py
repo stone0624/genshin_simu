@@ -79,7 +79,7 @@ if st.button("🔮 祈願一次"):
     f"""
     <div style='
         align-items: center;
-        height: 180px;
+        height: 200px;
         width: 100%;
         background-color: #d8bfd8;
         padding: 20px;
