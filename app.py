@@ -142,7 +142,7 @@ if selected in discovery:
             text-align: center;
             padding: 1em;
             margin-top: 1em;
-            margin-bottom: 1em;
+            margin-bottom: 20px;
             background-color: color;
             font-family: "Courier New", monospace;
         '>
