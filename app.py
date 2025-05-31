@@ -88,7 +88,6 @@ with st.expander("📁 查看 trash 資料夾狀況"):
 - 📂 recup_dir.5/: 空的（暫時）
 """, unsafe_allow_html=True)
     
-    st.markdown(markdown_text)
 
 # 模擬地圖互動
 place = [
