@@ -15,7 +15,7 @@ characters = [
     {"name": "溫迪", "rarity": 5, "message": "溫迪：欸你那資料夾怎麼叫 trash 啊？我來唱一首trash song"},
     {"name": "伊法", "rarity": 4, "message": "不是吧哥們?"},
     {"name": "鐘離", "rarity": 5, "message": "鐘離：記得，資料長存，靠的是備份與穩固。"},
-    {"name": "萬葉", "rarity": 6, "message": "葉天帝把全提瓦特的usb聚到一起，問你丟的是這顆風usb還是這顆雷usb" (但我是sb)}，
+    {"name": "萬葉", "rarity": 6, "message": "葉天帝把全提瓦特的usb聚到一起，並問你丟的是這顆風usb還是這顆雷usb (但我是sb)"}，
     {"name": "空氣", "rarity": 1, "message": "你抽到了空氣，也就是你那 150 小時掃描前 60 小時的成果。"}
 ]
 
