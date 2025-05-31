@@ -81,15 +81,11 @@ if st.button("🔮 祈願一次"):
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        height: auto;
+        height: 180px;
         width: 100%;
-        background-color: #fff7e6;
-        font-family: "Courier New", monospace;
-        border: 2px solid #ffa07a;
-        border-radius: 10px;
-        margin-top: 1em;
-        padding: 1em;
+        background-color: #d8bfd8;
+        padding: 20px;
+        margin: 30px 0;
         text-align: center;
         animation: fadeIn 2s ease-in-out;
     '>
