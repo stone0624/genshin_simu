@@ -1,9 +1,9 @@
 import streamlit as st
 import random
 
-st.set_page_config(page_title="資料復原期間模擬原神", page_icon="🌌")
-st.title("🌌 資料復原期間模擬原神系統")
-st.markdown("你目前正在 PhotoRec 還魂中，禁止登入提瓦特。請使用下列模擬系統來抒發悲傷。")
+st.set_page_config(page_title="資料復原期原神模擬器陽春版", page_icon="🌌")
+st.title("🌌 資料復原期原神模擬器.陽春ver")
+st.markdown("PhotoRec 招魂法事絕讚進行中，提瓦特立入禁止。")
 
 # 角色池設定
 characters = [
@@ -51,14 +51,21 @@ if st.button("🔮 抽角色"):
 # 模擬 trash 狀態
 with st.expander("📁 查看 trash 資料夾狀況"):
     st.write("目前有：")
-    st.markdown("""
-    - `recup_dir.1/`: 79 個無法辨識的 JPEG  
-    - `recup_dir.2/`: 1 個 29GB 的 `.fits` 無法打開  
-    - `recup_dir.3/`: 一個你自己都忘記寫過的 `.py` 腳本  
-    - `recup_dir.4/`: `~$報告1.docx` 殘骸  
-    - `recup_dir.5/`: 空的
-    """)    
-    st.info("🧼 別急。正在努力復原中。你可以繼續抽卡，但不能開原神。")
+
+    jpeg_count = random.randint(1, 100)
+    fits_size = random.randint(1, 100)
+    py_count = random.randint(1, 100)
+    doc_count = random.randint(1, 100)
+
+    markdown_text = f{"""
+- `recup_dir.1/`: {jpeg_count} 個無法辨識的 JPEG，例如 `{random_filename('jpg')}`  
+- `recup_dir.2/`: 1 個 {fits_size}GB 的 `.fits` 無法打開，例如 `{random_filename('fits')}`  
+- `recup_dir.3/`: {py_count} 個你自己都忘記寫過的 `.py` 腳本，例如 `{random_filename('py')}`  
+- `recup_dir.4/`: `~$報告1.docx` 殘骸，共 {doc_count} 段碎片，例如 `{random_filename('docx')}`  
+- `recup_dir.5/`: 空的（暫時）
+"""}
+
+    st.markdown(markdown_text)
 
 # 模擬地圖互動
 with st.expander("🗺️ 模擬地圖互動"):
