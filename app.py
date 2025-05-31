@@ -8,7 +8,7 @@ if st.checkbox("🌌 星空背景", value=True):
     st.markdown("""
     <style>
     body, [data-testid="stAppViewContainer"] {
-        background-color: #0f172a !important;
+        background-color: ##191970 !important;
         color: #f0f0f0;
     }
 
