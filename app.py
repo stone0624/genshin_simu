@@ -120,11 +120,11 @@ discovery = {
         "硬碟裡的檔案都叫 `final_final_報告v9(1).docx`。"
     ],
     "稻妻廢紙堆中的log.txt":  [
-        "我不知道",
+        "派蒙說:這邊的區域以後再來探索吧",
         "還沒想好"
     ],
     "草神深淵中的Z碟":  [
-        "哭了",
+        "那被理事之心",
         "年輕人悔恨的淚水"
     ]
 }
@@ -137,14 +137,15 @@ if selected in discovery:
     st.markdown(
         f"""
         <div style='
-            border: 2px solid #888;
-            border-radius: 8px;
+            border: 2px solid {color};
+            border-radius: 6px;
             padding: 1em;
             margin-top: 1em;
             background-color: color;
             font-family: "Courier New", monospace;
         '>
-        <strong>📍你在「{selected}」中發現：</strong><br><br>{message}</div>
+        <strong>📍你在「{selected}」中發現{message}</strong><br><br>
+        </div>
         """,
         unsafe_allow_html=True
     )
