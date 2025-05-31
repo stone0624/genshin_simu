@@ -187,10 +187,10 @@ with st.expander("📁 查看 trash 資料夾狀況"):
 st.markdown(r"""
 <style>
 label {
-    color: #FFD700 !important;
+    color: ##ffffe0 !important;
 }
 [data-testid="stRadio"] {
-    background-color: #1e1e2f;
+    background-color: #b0c4de !important;
     border-radius: 10px;
     padding: 0.5em;
     margin-top: 0.5em;
