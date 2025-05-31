@@ -132,7 +132,7 @@ discovery = {
 if selected in discovery:
     # st.write(random.choice(discovery[selected]))
     {"╭──────╮"}
-    {result[random.choice(discovery[selected])]}
+    st.write(random.choice(discovery[selected]))
     {"╰──────╯"}
 
 st.success("再撐一下。你會從深淵撈回 trash 的。")
