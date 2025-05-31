@@ -182,12 +182,12 @@ with st.expander("📁 查看 trash 資料夾狀況"):
 label {
     color: #FFD700 !important;
 }
-[data-testid="stRadio"] {
+[data-testid="stRadio"] {r"""
     background-color: #1e1e2f;
     border-radius: 10px;
     padding: 0.5em;
     margin-top: 0.5em;
-}
+"""}
 
 place = [
         "星落湖邊的壞掉硬碟", 
