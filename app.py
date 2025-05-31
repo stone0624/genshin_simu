@@ -139,8 +139,10 @@ if selected in discovery:
         <div style='
             border: 2px solid {color};
             border-radius: 6px;
+            text-align: center;
             padding: 1em;
             margin-top: 1em;
+            margin-bottom: 1em;
             background-color: color;
             font-family: "Courier New", monospace;
         '>
