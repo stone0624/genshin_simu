@@ -78,8 +78,6 @@ if st.button("🔮 祈願一次"):
     st.markdown(
     f"""
     <div style='
-        display: flex;
-        justify-content: center;
         align-items: center;
         height: 180px;
         width: 100%;
