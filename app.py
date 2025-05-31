@@ -129,11 +129,25 @@ discovery = {
     ]
 }
 
+colors = ["#f9f9f9", "#fff7e6", "#e6f7ff", "#f0f0f0"]
+color = random.choice(colors)
+
 if selected in discovery:
-    # st.write(random.choice(discovery[selected]))
-    {"╭──────╮"}
-    st.write(random.choice(discovery[selected]))
-    {"╰──────╯"}
+    message = random.choice(discovery[selected])
+    st.markdown(
+        f"""
+        <div style='
+            border: 2px solid #888;
+            border-radius: 8px;
+            padding: 1em;
+            margin-top: 1em;
+            background-color: color;
+            font-family: "Courier New", monospace;
+        '>
+        <strong>📍你在「{selected}」中發現：</strong><br><br>{message}</div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.success("再撐一下。你會從深淵撈回 trash 的。")
 
