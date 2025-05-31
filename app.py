@@ -1,21 +1,22 @@
 import streamlit as st
 import random
 
-st.set_page_config(page_title="資料復原期原神模擬器陽春版", page_icon="🌌")
-st.title("🌌 資料復原期原神模擬器.陽春ver")
+st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
+st.title("🌌 原神模擬器.陽春ver")
 st.markdown("PhotoRec 招魂法事絕讚進行中，提瓦特立入禁止。")
 
 # 角色池設定
 characters = [
-    {"name": "艾爾海森", "rarity": 5, "message": "你抽到了艾爾海森。他正在把你USB裡的靈魂拆成sector觀察。"},
-    {"name": "卡維", "rarity": 5, "message": "你抽到了卡維。他正在被室友氣成風史萊姆。"},
-    {"name": "納西妲", "rarity": 5, "message": "納西妲問你：你為什麼不備份？"},
-    {"name": "多莉", "rarity": 4, "message": "多莉說：要不要買我這顆1TB SSD？只要八百萬摩拉。"},
+    {"name": "艾爾海森", "rarity": 5, "message": "艾爾海森無視你的哀號告訴你他下班了。"},
+    {"name": "卡維", "rarity": 4, "message": "卡維正在被室友氣成風史萊姆。"},
+    {"name": "納西妲", "rarity": 5, "message": "納西妲拿出備份好的童話版本為你解壓縮。"},
+    {"name": "多莉", "rarity": 4, "message": "多莉熱情地告訴你現在買這顆 1TB SSD 只要八億摩拉~"},
     {"name": "芭芭拉", "rarity": 4, "message": "芭芭拉正在為你毀損的 .fits 檔唱歌療傷。"},
-    {"name": "溫迪", "rarity": 3, "message": "溫迪：欸你那資料夾怎麼叫 trash 啊？我來唱一首trash song"},
-    {"name": "凱亞", "rarity": 4, "message": "凱亞：聽說你硬碟快壞了，來點冰元素冷靜一下？"},
+    {"name": "溫迪", "rarity": 5, "message": "溫迪：欸你那資料夾怎麼叫 trash 啊？我來唱一首trash song"},
+    {"name": "伊法", "rarity": 4, "message": "不是吧哥們?"},
     {"name": "鐘離", "rarity": 5, "message": "鐘離：記得，資料長存，靠的是備份與穩固。"},
-    {"name": "空氣", "rarity": 1, "message": "你抽到了空氣，也就是你那 114 小時掃描前 60 小時的成果。"}
+    {"name": "萬葉", "rarity": 6, "message": "葉天帝把全提瓦特的usb聚到一起，問你丟的是這顆風usb還是這顆雷usb" (但我是sb)}，
+    {"name": "空氣", "rarity": 1, "message": "你抽到了空氣，也就是你那 150 小時掃描前 60 小時的成果。"}
 ]
 
 # 顏文字與對話框樣式設定
@@ -26,8 +27,9 @@ message_styles = {
     "多莉": {"emoji": "(๑•̀ㅂ•́)و✧💰", "top": "💎💎💎💎💎", "bottom": "💰💰💰💰💰"},
     "芭芭拉": {"emoji": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧", "top": "♪♫♪♫♪", "bottom": "♫♪♫♪♫"},
     "溫迪": {"emoji": "(～￣▽￣)～♪", "top": "🌬️🌬️🌬️", "bottom": "🌬️🌬️🌬️"},
-    "凱亞": {"emoji": "(╯✧▽✧)╯", "top": "❄️❄️❄️", "bottom": "❄️❄️❄️"},
+    "伊法": {"emoji": "(╯✧▽✧)╯", "top": "❄️❄️❄️", "bottom": "❄️❄️❄️"},
     "鐘離": {"emoji": "(￣︶￣)↗", "top": "🪨🪨🪨", "bottom": "🪨🪨🪨"},
+    "萬葉": {"emoji": "(￣︶￣)↗", "top": "🪨🪨🪨", "bottom": "🪨🪨🪨"},
     "空氣": {"emoji": "(。_。)", "top": "░░░░░", "bottom": "░░░░░"},
 }
 
