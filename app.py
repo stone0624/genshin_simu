@@ -137,12 +137,15 @@ if selected in discovery:
     st.markdown(
         f"""
         <div style='
+            display: flex;
+            justify-content: center;   /* 水平置中 */
+            align-items: center;       /* 垂直置中 */
+            height: 200px;
             border: 2px solid {color};
             border-radius: 6px;
-            text-align: center;
             padding: 1em;
             margin-top: 1em;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
             background-color: color;
             font-family: "Courier New", monospace;
         '>
