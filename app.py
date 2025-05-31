@@ -5,6 +5,32 @@ st.set_page_config(page_title="原神模擬器陽春版", page_icon="🌌")
 st.title("🌌 原神模擬器.陽春ver")
 st.markdown("PhotoRec 招魂法事絕讚進行中，提瓦特立入禁止。")
 
+# 介面
+st.markdown("""
+<style>
+@keyframes moveStars {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1000px);}
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(white 1px, transparent 1px),
+                radial-gradient(white 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+    animation: moveStars 60s linear infinite;
+    z-index: -1;
+    opacity: 0.2;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # 角色池設定
 characters = [
     {"name": "艾爾海森", "rarity": 5, "message": "艾爾海森無視你的哀號告訴你他下班了。"},
@@ -37,19 +63,29 @@ message_styles = {
 
 # 抽卡
 if st.button("🔮 抽角色"):
-    result = random.choices(characters, weights=[2 if c["rarity"] == 5 else 5 if c["rarity"] == 4 else 8 for c in characters])[0]
-    style = message_styles.get(result["name"], {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"})
-    st.markdown(
-        ```
-        << {result["rarity"]}星角色 >>
-            
-        {result["name"]} 登場!! {style["emoji"]} 
-            
-        {style["top"]}
-        {result["message"]}
-        {style["bottom"]}
-        ```
-        )
+    result = random.choices(
+        characters,
+        weights=[2 if c["rarity"] == 5 
+                 else 5 if c["rarity"] == 4 
+                 else 11 for c in characters]
+    )[0]
+    
+    style = message_styles.get(
+        result["name"],
+        {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"}
+    )
+
+    st.markdown(f"""
+
+                🔮 🌀 🪄 🪬 🕯️
+                {result["rarity"]}星角色 >>> {result["name"]} 登場 ✨{style["emoji"]}
+                🔮 🌀 🪄 🪬 🕯️
+                
+                {style["top"]}
+                {result["message"]}
+                {style["bottom"]}
+
+    """)
 
 # 模擬 trash 狀態
 # 隨機檔名產生器
