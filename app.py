@@ -41,7 +41,7 @@ if st.button("🔮 抽角色"):
     style = message_styles.get(result["name"], {"emoji": "☆彡", "top": "vvvvvvvv", "bottom": "^^^^^^^^"})
     st.markdown(
         ```
-        << {result["rarity"]}星角色 ☆彡
+        << {result["rarity"]}星角色 >>
             
         ☆ {result["name"]} ☆ 登場！{style["emoji"]} 
             
