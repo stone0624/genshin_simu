@@ -20,20 +20,18 @@ button[kind="secondary"] {
 if st.checkbox("🌌 星空背景", value=True):
     st.markdown(r"""
     <style>
-    body, [data-testid="stAppViewContainer"] {
+    /* 這是主要容器，給它相對定位和邊界限制 */
+    [data-testid="stAppViewContainer"] {
         background: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
         color: #FFD700;
-    }
-
-    @keyframes moveStars {
-        from {transform: translateY(0);}
-        to {transform: translateY(-1000px);}
-    }
-
-    [data-testid="stAppViewContainer"]::before {
-        content: '';
         position: relative !important;
         overflow: hidden !important;
+    }
+
+    /* 星星層貼在後面當背景動畫 */
+    [data-testid="stAppViewContainer"]::before {
+        content: '';
+        position: absolute;
         top: 0;
         left: 0;
         width: 200%;
@@ -46,6 +44,11 @@ if st.checkbox("🌌 星空背景", value=True):
         pointer-events: none;
         z-index: -1;
         opacity: 0.4;
+    }
+
+    @keyframes moveStars {
+        from {transform: translateY(0);}
+        to {transform: translateY(-1000px);}
     }
     </style>
     """, unsafe_allow_html=True)
@@ -264,5 +267,5 @@ if selected in discovery:
         unsafe_allow_html=True
     )
 
-st.success("再撐一下。你會從深淵撈回 trash 的。")
+# st.success("再撐一下。你會從深淵撈回 trash 的。")
 
