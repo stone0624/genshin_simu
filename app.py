@@ -137,12 +137,12 @@ if selected in discovery:
     st.markdown(
         f"""
         <div style='
-            display: flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         height: 180px;
         width: 100%;
-        border: 2px dashed {color1};
+        border: 5px solid {color1};
         border-radius: 10px;
         background-color: {color2};
         padding: 20px;
