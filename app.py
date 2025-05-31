@@ -8,8 +8,8 @@ if st.checkbox("🌌 星空背景", value=True):
     st.markdown("""
     <style>
     body, [data-testid="stAppViewContainer"] {
-        background-color: ##191970 !important;
-        color: #f0f0f0;
+        background-color: linear-gradient(180deg, #0d1b2a 0%, #191970 100%) !important;
+        color: #FFD700;
     }
 
     @keyframes moveStars {
@@ -26,11 +26,12 @@ if st.checkbox("🌌 星空背景", value=True):
         height: 200%;
         background: radial-gradient(white 1px, transparent 1px),
                     radial-gradient(white 1px, transparent 1px);
-        background-size: 100px 100px;
+        background-size: 80px 80px;;
         background-position: 0 0, 50px 50px;
         animation: moveStars 60s linear infinite;
+        pointer-events: none;
         z-index: -1;
-        opacity: 0.2;
+        opacity: 0.4;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -102,6 +103,7 @@ if st.button("🔮 祈願一次"):
         height: 250px;
         width: 100%;
         background-color: #faebd7;
+        color: black;
         padding: 20px;
         margin: 30px 0;
         text-align: center;
@@ -221,6 +223,7 @@ if selected in discovery:
         width: 100%;
         border: 5px solid {color1};
         border-radius: 10px;
+        color: black;
         background-color: {color2};
         padding: 20px;
         margin: 30px 0;
