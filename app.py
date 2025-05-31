@@ -193,7 +193,7 @@ label {
     color: ##ffffe0 !important;
 }
 [data-testid="stRadio"] {
-    background-color: #b0c4de !important;
+    background-color: #f0f8ff !important;
     border-radius: 10px;
     padding: 0.5em;
     margin-top: 0.5em;
