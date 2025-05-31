@@ -40,7 +40,7 @@ if st.button("🔮 抽角色"):
     st.markdown(
     f"""
 ```
-★ {result["rarity"]}星角色獲得！
+★ {result["rarity"]}星角色 ★☆
 
 {style["emoji"]} {result["name"]} 登場！
 
