@@ -81,7 +81,7 @@ if st.button("🔮 祈願一次"):
         align-items: center;
         height: 200px;
         width: 100%;
-        background-color: #d8bfd8;
+        background-color: #faebd7;
         padding: 20px;
         margin: 30px 0;
         text-align: center;
